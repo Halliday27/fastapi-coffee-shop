@@ -1,29 +1,36 @@
-# FastAPI Coffee Shop ☕
+# FastAPI Expense Tracker API
 
-A small learning project for understanding how APIs work in a real product flow.
-
-## What you can learn
-- Build API endpoints with FastAPI.
-- Connect API + database (SQLite via SQLModel).
-- Render web pages (Jinja templates).
-- Use one app for two roles:
-  - Customer page to create orders.
-  - Kitchen dashboard to update status and monitor stock.
+A learning-focused FastAPI backend for user auth, categories, and expense tracking.
 
 ## Features
-- Customer ordering website (`/`)
-- Kitchen dashboard (`/kitchen`)
-- Inventory system with stock validation
-- Order status workflow (`RECEIVED`, `PREPARING`, `READY`, `CANCELLED`)
-- Auto API docs (`/docs`)
+- JWT authentication (register/login)
+- Password hashing with passlib/bcrypt
+- Category management per user
+- Expense CRUD per user
+- Ownership checks for categories and expenses
+- SQLite + SQLAlchemy ORM
+- Interactive docs at `/docs`
 
-## Run
+## Run locally
 ```bash
-pip install -r backend/requirements.txt
-uvicorn backend.app.main:app --reload
+pip install -r requirements.txt
+python run.py
 ```
 
-## Open in browser
-- Customer page: http://127.0.0.1:8000/
-- Kitchen page: http://127.0.0.1:8000/kitchen
+Then open:
 - API docs: http://127.0.0.1:8000/docs
+
+## Project structure
+```text
+app/
+  config.py
+  database.py
+  dependencies.py
+  main.py
+  models/
+  routers/
+  schemas/
+  utils/
+requirements.txt
+run.py
+```
